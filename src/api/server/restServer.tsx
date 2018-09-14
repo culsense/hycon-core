@@ -151,7 +151,7 @@ export class RestServer implements IRest {
         }
     }
 
-    public async outgoingSignedTx(tx: { privateKey: string, to: string, amount: string, fee: string, nonce?: number }, queueTx?: Function): Promise<{ txHash: string } | IResponseError> {
+    public async outgoingSignedTx(tx: { privateKey: string, to: string, amount: string, memo: string, fee: string, nonce?: number }, queueTx?: Function): Promise<{ txHash: string } | IResponseError> {
         return this.txNonceLock.critical(async () => {
             try {
                 const address = new Address(tx.to)

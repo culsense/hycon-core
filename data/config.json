@@ -1,9 +1,1 @@
-{
-    "dataGenesis": "./data/genesis.dat",
-    "dataRaw": "./data/raw",
-    "dataRoot": "./data",
-    "dataWallet": "./wallet",
-    "minerAddress": "",
-    "txPoolMaxAddresses": 36000,
-    "txPoolMaxTxsPerAddress": 64
-}
+{"dataGenesis":"./data/genesis.dat","dataRaw":"./data/raw","dataRoot":"./data","dataWallet":"./wallet","minerAddress":"H2KnJfB1zv5RbFeztFXn1GjyR2Qud5pcd","txPoolMaxAddresses":36000,"txPoolMaxTxsPerAddress":64}

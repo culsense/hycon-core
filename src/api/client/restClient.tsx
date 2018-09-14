@@ -64,14 +64,14 @@ export class RestClient implements IRest {
         )
     }
 
-    public outgoingSignedTx(tx: { privateKey: string, to: string, amount: string, fee: string, nonce: number }, queueTx?: Function): Promise<{ txHash: string } | IResponseError> {
+    public outgoingSignedTx(tx: { privateKey: string, to: string, amount: string, memo: string, fee: string, nonce: number }, queueTx?: Function): Promise<{ txHash: string } | IResponseError> {
         const headers = new Headers()
         headers.append("Accept", "application/json")
         headers.append("Content-Type", "application/json")
         return Promise.resolve(fetch(`/api/${this.apiVersion}/signedtx`, {
             method: "POST",
             headers,
-            body: JSON.stringify({ privateKey: tx.privateKey, to: tx.to, amount: tx.amount, fee: tx.fee, nonce: tx.nonce }),
+            body: JSON.stringify({ privateKey: tx.privateKey, to: tx.to, amount: tx.amount, memo: tx.memo, fee: tx.fee, nonce: tx.nonce }),
         })
             .then((response) => response.json())
             .catch((err: Error) => {

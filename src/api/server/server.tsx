@@ -148,6 +148,7 @@ export class HttpServer {
                         to: req.body.to,
                         amount: req.body.amount,
                         fee: req.body.fee,
+                        memo: req.body.memo,
                         nonce: req.body.nonce,
                     }, async (tx: SignedTx) => {
                         const newTxs = await this.hyconServer.txQueue.putTxs([tx])
