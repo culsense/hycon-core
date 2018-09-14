@@ -13,6 +13,7 @@ export class SignedTx implements proto.ITx {
     public to: Address
     public amount: Long
     public fee: Long
+    public memo: Buffer
     public nonce: number
     public signature: Buffer
     public recovery: number
@@ -37,6 +38,7 @@ export class SignedTx implements proto.ITx {
         if (stx.from === undefined) { throw (new Error("from address not defined in input")) }
         if (stx.amount === undefined) { throw (new Error("amount not defined in input")) }
         if (stx.fee === undefined) { throw (new Error("fee not defined in input")) }
+        if (stx.memo === undefined) { throw (new Error("memo not defined in input")) }
         if (stx.nonce === undefined) { throw (new Error("nonce not defined in input")) }
         if (stx.signature === undefined) { throw (new Error("signature not defined in input")) }
         if (stx.recovery === undefined) { throw (new Error("recovery not defined in input")) }
